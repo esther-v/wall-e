@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+section{
+    margin-bottom: 70px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column{
+    flex-direction: column;
+}
+
+h1{
+    font-weight: 900;
+    font-size: clamp(64px, 10vw, 96px);
+    text-align: center;
+    color: #424242;
+}
+/* WALL-E */
+#wall-e{
+    background: url('wall-eBg\ 1.png') no-repeat center / cover;
+    min-height: 721px;
+    height: auto;
+}
+header{
+    width: min(1198px, 92%);
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+
+.menu a{
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+.burger {
+    display: none;
+}
+
+.walle-container{
+    margin: 130px auto 0;
+    width: min(930px, 92%);
+    align-items: flex-end;
+    gap: 40px;
+
+}
+
+.walle-container h1{
+    font-size: clamp(64px, 10vw, 110px);
+    color: #FFFFFF;
+}
+
+.icon-container{
+    gap: 30px;
+}
+
+.icon{
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: white;
+    justify-content: center;
+}
+
+
+
+/* EVE  */
+
+article{
+    width: min(368px, 92%);
+}
+
+.eve-container{
+    justify-content: center;
+    gap: 100px;
+}
+
+h2{
+    font-weight: 900;
+    font-size: clamp(24px, 5vw ,36px);
+    color: #2C9ED7;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 29px;
+    color: #424242;
+}
+
+span{
+    color: #2C9ED7;
+    font-weight: 900;
+}
+
+
+/* MCCREA */
+#mccrea{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(239, 239, 239, 0.1) 0%, rgba(72, 57, 112, 0.1) 100%);
+}
+
+.mccrea-container{
+    min-height: 483.15px;
+    height: auto;
+    width: min(1198px, 92%);
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.carte{
+    background: #483970;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 400px;
+}
+h3{
+    font-weight: 900;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.carte1{
+    background: #C9868E;
+    align-self: flex-end;
+}
+
+.carte3{
+    background: #C26C5C;
+    align-self: flex-start;
+}
+
+/* CONTACT */
+
+form{
+    margin-top: 50px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+form > *{
+    width: min(600px, 92%);
+    height: 60px;
+    background: #EAEAEA;
+    border-radius: 6px;
+    padding: 15px 30px;
+    font-size: clamp(18px, 4vw, 24px);
+    color: #828282;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+    height: 188px;
+}
+
+form > *:last-child{
+width: 210px;
+height: 56px;
+left: 648px;
+background: #1E3581;
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+border-radius: 47px;
+font-weight: 900;
+font-size: 24px;
+color: #FFFFFF;
+
+}
+
+
+
+@media (max-width: 890px) {
+    /* MCCREA */
+    #mccrea{
+        background: none;
+    }
+
+    .mccrea-container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mccrea-container div {
+        width: 100%;
+        height: auto;
+        /* auto veut dire que ça s'adapte à son contenu, à ses enfants */
+        border: none;
+        box-shadow: none;
+    }
+
+    h3{
+        margin-top: 10px;
+    }
+
+    /* EVE */
+
+    .eve-container {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #344892;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        transform: translateX(100%);
+        transition: 0.5s;
+    }
+
+    .menu-open {
+        transform: translateX(0);
+    }
+
+    .menu a {
+        margin-left: 0;
+    }
+
+    .burger, 
+    header > a {
+        background: #344892;
+        padding: 10px;
+        z-index: 1;
+        /* permet que les elements passent devant les autres */ 
+        /* plus la valeur du z-index est grande plus il passe au dessus des autres */
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+   
+    .burger span {
+        margin: 6px 0;
+        width: 40px;
+        height: 5px;
+        background: white;
+        border-radius: 54px;
+        display: block;
+    }
+
+    .icon-container {
+        flex-direction: column;
+        
+    }
+    .walle-container {
+        align-items: center;
+        margin-bottom: 40px;
+        margin-top: 65px;
+    }
+
+    .icon {
+        width: 118px;
+        height: 118px;
+        /* les petites icones robot diminuent automatiquement avec leur div parent .icon car elles n'ont plus la place de garder leur taille */
+    }
+
+    section {
+        margin-bottom: 50px;
+    }
+
+   
+    .burger-cross span:first-child {
+        transform: rotate(45deg) translate(7px, 8px);
+    }
+    .burger-cross span:last-child {
+        transform: rotate(-45deg) translate(7px, -8px);
+    }
+
+    .burger-cross span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    
+}
